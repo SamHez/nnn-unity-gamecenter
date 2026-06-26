@@ -1,0 +1,306 @@
+@media (max-width: 1080px) {
+  .primary-nav {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: grid;
+  }
+
+  .mobile-nav {
+    display: grid;
+    grid-template-rows: 0fr;
+    border-top: var(--border-muted);
+    overflow: hidden;
+    transition: grid-template-rows 220ms ease;
+  }
+
+  .mobile-nav--open {
+    grid-template-rows: 1fr;
+  }
+
+  .mobile-nav:target {
+    grid-template-rows: 1fr;
+  }
+
+  .mobile-nav__inner {
+    display: grid;
+    min-height: 0;
+    gap: 1rem;
+    padding-block: 0;
+    overflow: hidden;
+    transition: padding 220ms ease;
+  }
+
+  .mobile-nav--open .mobile-nav__inner {
+    padding-block: 1rem 1.25rem;
+  }
+
+  .mobile-nav:target .mobile-nav__inner {
+    padding-block: 1rem 1.25rem;
+  }
+
+  .mobile-nav__link {
+    padding-block: 0.35rem;
+    font-size: 0.98rem;
+  }
+
+  .feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .home-hero__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .home-highlight-strip__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .world-cup-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .hero-stats {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    width: 100%;
+  }
+
+  .booking-strip__inner,
+  .competition-banner__inner,
+  .split-section,
+  .rooftop-section__inner,
+  .inner-grid,
+  .competition-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-grid,
+  .match-grid,
+  .gallery-grid,
+  .detail-card-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .location-cta__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .home-hero-decor__screen {
+    opacity: 0.42;
+  }
+}
+
+@media (max-width: 760px) {
+  .container {
+    width: min(100% - 1.25rem, var(--site-max-width));
+  }
+
+  .header__inner {
+    min-height: 76px;
+  }
+
+  .brand-link__logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  .brand-link__text {
+    display: none;
+  }
+
+  .header__actions > .button {
+    display: none;
+  }
+
+  .page-hero {
+    min-height: 320px;
+    padding-block: 3rem;
+  }
+
+  .home-hero {
+    min-height: auto;
+    padding-block: 3rem 2.5rem;
+  }
+
+  .home-hero__logo {
+    width: 86px;
+  }
+
+  .home-hero h1 {
+    max-width: 10ch;
+    font-size: clamp(2.7rem, 14vw, 4.8rem);
+  }
+
+  .home-hero__actions {
+    width: 100%;
+  }
+
+  .home-hero__brand-line {
+    font-size: clamp(1.25rem, 8vw, 2.25rem);
+  }
+
+  .hero-stats {
+    grid-template-columns: 1fr;
+    width: 100%;
+  }
+
+  .hero-stats__item {
+    min-height: 58px;
+    justify-content: center;
+  }
+
+  .home-hero-decor__beam {
+    bottom: -0.5rem;
+    width: 92vw;
+    height: 4.6rem;
+  }
+
+  .home-hero-decor__beam--left {
+    left: -40vw;
+  }
+
+  .home-hero-decor__beam--right {
+    right: -40vw;
+  }
+
+  .home-hero::after {
+    bottom: -50px;
+    width: 92vw;
+    height: 7rem;
+  }
+
+  .world-cup-strip__heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pool-orbit {
+    top: 18%;
+    right: -4rem;
+    opacity: 0.42;
+  }
+
+  .home-hero-decor__felt,
+  .home-hero-decor__screen,
+  .home-hero-decor__cue-line,
+  .home-hero-decor__rack {
+    opacity: 0.28;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 12vw, 4.4rem);
+  }
+
+  .feature-grid,
+  .footer__grid,
+  .contact-grid,
+  .experience-grid,
+  .match-grid,
+  .gallery-grid,
+  .detail-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .booking-strip {
+    background: linear-gradient(180deg, #ffffff, #f4f4f6);
+  }
+
+  .booking-strip__actions,
+  .location-cta__actions,
+  .contact-actions {
+    width: 100%;
+  }
+
+  .competition-banner {
+    background: linear-gradient(180deg, var(--color-red), var(--color-red-dark));
+  }
+
+  .competition-banner__icon {
+    width: 68px;
+  }
+
+  .home-highlight-card {
+    min-height: auto;
+  }
+
+  .rooftop-card,
+  .gallery-tile {
+    min-height: 240px;
+  }
+
+  .cta-section__inner {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .footer__inner {
+    padding-block: 2rem;
+  }
+
+  .footer__links {
+    gap: 0.7rem 1rem;
+  }
+
+  .footer__contact {
+    display: grid;
+    gap: 0.5rem;
+  }
+
+  .page-hero__actions {
+    width: 100%;
+  }
+}
+
+@media (max-width: 460px) {
+  h2 {
+    font-size: clamp(2.1rem, 14vw, 3.5rem);
+  }
+
+  .page-hero__text {
+    font-size: 1rem;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .home-highlight-strip__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .world-cup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-hero h1 {
+    font-size: clamp(2.45rem, 15vw, 4rem);
+  }
+
+  .home-hero__intro {
+    font-size: clamp(1.35rem, 10vw, 2.2rem);
+  }
+
+  .home-hero__subheading {
+    font-size: 0.98rem;
+  }
+
+  .home-highlight-strip::before,
+  .home-highlight-strip::after {
+    opacity: 0.28;
+  }
+
+  .home-hero-decor__beam {
+    height: 4rem;
+  }
+
+  .match-card,
+  .experience-card {
+    min-height: auto;
+  }
+}

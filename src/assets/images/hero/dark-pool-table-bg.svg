@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Dark pool lounge background">
+  <defs>
+    <radialGradient id="roomGlow" cx="50%" cy="28%" r="70%">
+      <stop offset="0" stop-color="#274237" stop-opacity="0.72"/>
+      <stop offset="0.44" stop-color="#11090b" stop-opacity="0.88"/>
+      <stop offset="1" stop-color="#020101"/>
+    </radialGradient>
+    <linearGradient id="tableFelt" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#12563f"/>
+      <stop offset="0.52" stop-color="#073525"/>
+      <stop offset="1" stop-color="#020101"/>
+    </linearGradient>
+    <linearGradient id="screenGlow" x1="0" x2="1">
+      <stop offset="0" stop-color="#d7204d" stop-opacity="0.7"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.08"/>
+    </linearGradient>
+    <filter id="softBlur">
+      <feGaussianBlur stdDeviation="10"/>
+    </filter>
+  </defs>
+  <rect width="1600" height="900" fill="url(#roomGlow)"/>
+  <g opacity="0.32">
+    <rect x="112" y="120" width="330" height="180" rx="10" fill="#050505" stroke="#ffffff" stroke-opacity="0.16"/>
+    <rect x="1160" y="118" width="330" height="180" rx="10" fill="#050505" stroke="#ffffff" stroke-opacity="0.16"/>
+    <rect x="135" y="145" width="285" height="120" fill="url(#screenGlow)" opacity="0.65"/>
+    <rect x="1184" y="145" width="285" height="120" fill="url(#screenGlow)" opacity="0.46"/>
+  </g>
+  <g opacity="0.5" filter="url(#softBlur)">
+    <ellipse cx="800" cy="355" rx="560" ry="110" fill="#d7204d" opacity="0.2"/>
+    <ellipse cx="800" cy="330" rx="420" ry="90" fill="#ffffff" opacity="0.08"/>
+  </g>
+  <g transform="translate(170 440)">
+    <path d="M130 0h1080c72 0 130 58 130 130v230H0V130C0 58 58 0 130 0Z" fill="#090808" opacity="0.88"/>
+    <path d="M170 42h1000c52 0 94 42 94 94v160H76V136c0-52 42-94 94-94Z" fill="url(#tableFelt)" stroke="#d1d0d0" stroke-opacity="0.16" stroke-width="5"/>
+    <g fill="#020101" opacity="0.92">
+      <circle cx="112" cy="86" r="28"/>
+      <circle cx="668" cy="64" r="26"/>
+      <circle cx="1228" cy="86" r="28"/>
+      <circle cx="112" cy="302" r="28"/>
+      <circle cx="668" cy="304" r="26"/>
+      <circle cx="1228" cy="302" r="28"/>
+    </g>
+    <g opacity="0.76">
+      <circle cx="725" cy="142" r="24" fill="#020101" stroke="#ffffff" stroke-width="5"/>
+      <text x="725" y="151" fill="#ffffff" font-family="Arial, sans-serif" font-size="23" font-weight="700" text-anchor="middle">8</text>
+      <circle cx="780" cy="170" r="22" fill="#d7204d"/>
+      <circle cx="670" cy="178" r="22" fill="#ffffff"/>
+      <circle cx="725" cy="220" r="22" fill="#942b46"/>
+    </g>
+    <path d="M300 260 1040 76" stroke="#d1d0d0" stroke-opacity="0.48" stroke-width="4"/>
+    <path d="M260 304 1120 304" stroke="#ffffff" stroke-opacity="0.08" stroke-width="2"/>
+  </g>
+  <g opacity="0.22">
+    <path d="M0 0h1600v900H0z" fill="none"/>
+    <path d="M0 90h1600M0 180h1600M0 270h1600M0 360h1600M0 450h1600M0 540h1600M0 630h1600M0 720h1600M0 810h1600" stroke="#ffffff" stroke-opacity="0.08"/>
+    <path d="M100 0v900M200 0v900M300 0v900M400 0v900M500 0v900M600 0v900M700 0v900M800 0v900M900 0v900M1000 0v900M1100 0v900M1200 0v900M1300 0v900M1400 0v900M1500 0v900" stroke="#ffffff" stroke-opacity="0.05"/>
+  </g>
+</svg>

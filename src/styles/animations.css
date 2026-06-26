@@ -1,0 +1,154 @@
+@media (prefers-reduced-motion: no-preference) {
+  .page-hero__content,
+  .feature-card,
+  .section-title,
+  .contact-card {
+    animation: fade-up 520ms ease both;
+  }
+
+  .home-hero__logo {
+    animation: hero-logo-in 620ms ease both;
+  }
+
+  .home-hero__intro {
+    animation: fade-up 520ms ease 90ms both;
+  }
+
+  .home-hero h1 {
+    animation: hero-heading-up 720ms cubic-bezier(0.16, 1, 0.3, 1) 150ms both;
+  }
+
+  .home-hero__subheading {
+    animation: fade-up 560ms ease 260ms both;
+  }
+
+  .home-hero__actions {
+    animation: fade-up 560ms ease 360ms both;
+  }
+
+  .home-hero-decor__beam--left {
+    animation: beam-left-in 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .home-hero-decor__beam--right {
+    animation: beam-right-in 760ms cubic-bezier(0.16, 1, 0.3, 1) both;
+  }
+
+  .home-hero-decor__v,
+  .hero-stats,
+  .home-highlight-card,
+  .booking-strip__copy,
+  .experience-card,
+  .match-card,
+  .gallery-tile {
+    animation: fade-up 560ms ease both;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes hero-logo-in {
+  from {
+    opacity: 0;
+    transform: scale(0.92);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-heading-up {
+  from {
+    opacity: 0;
+    transform: translateY(34px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes beam-left-in {
+  from {
+    opacity: 0;
+    transform: translateX(-18vw) rotate(22deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(22deg);
+  }
+}
+
+@keyframes beam-right-in {
+  from {
+    opacity: 0;
+    transform: translateX(18vw) rotate(-22deg);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0) rotate(-22deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
+
+.scroll-reveal-enabled .reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(18px);
+  transition:
+    opacity 520ms ease,
+    transform 520ms ease;
+}
+
+.scroll-reveal-enabled .reveal-on-scroll.is-visible,
+.reveal-on-scroll {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.match-card.reveal-on-scroll:nth-child(2),
+.gallery-tile.reveal-on-scroll:nth-child(2) {
+  transition-delay: 70ms;
+}
+
+.match-card.reveal-on-scroll:nth-child(3),
+.gallery-tile.reveal-on-scroll:nth-child(3) {
+  transition-delay: 140ms;
+}
+
+.match-card.reveal-on-scroll:nth-child(4),
+.gallery-tile.reveal-on-scroll:nth-child(4) {
+  transition-delay: 210ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal-on-scroll {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
