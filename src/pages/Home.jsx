@@ -1,39 +1,45 @@
 import { Beef, Building2, CircleDot, Gamepad2, GlassWater, MapPin, Phone, Send, Trophy, Utensils } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import logo from '../assets/logo/nnn-logo.png';
+import nightViewsImage from '../assets/night-views.webp';
+import poolImage from '../assets/pool-1.webp';
+import bbqImage from '../assets/bbq.jpeg';
+import viewimg from '../assets/views.jpg';
+
+import heroImage from '../assets/images/hero/bg.png';
 
 const worldCupMatches = [
   {
     group: 'Group I',
-    time: '3 PM ET',
+    time: 'TUE 7 PM',
     venue: 'Gillette Stadium',
     home: { name: 'Norway', logo: '🇳🇴' },
     away: { name: 'France', logo: '🇫🇷' },
   },
   {
     group: 'Group I',
-    time: '3 PM ET',
+    time: 'WED 11 PM',
     venue: 'BMO Field',
     home: { name: 'Senegal', logo: '🇸🇳' },
     away: { name: 'Iraq', logo: '🇮🇶' },
   },
   {
     group: 'Group G',
-    time: '11 PM ET',
+    time: 'FRI 9 PM',
     venue: 'Lumen Field',
     home: { name: 'Egypt', logo: '🇪🇬' },
     away: { name: 'IR Iran', logo: '🇮🇷' },
   },
   {
     group: 'Group G',
-    time: '11 PM ET',
+    time: 'SUN 8:30PM',
     venue: 'BC Place',
-    home: { name: 'New Zealand', logo: '🇳🇿' },
-    away: { name: 'Belgium', logo: '🇧🇪' },
+    home: { name: 'Australia', logo: '🇳🇿' },
+    away: { name: 'India', logo: '🇧🇪' },
   },
   {
     group: 'Group H',
-    time: '8 PM ET',
+    time: 'SAT 11:45PM',
     venue: 'Estadio Akron',
     home: { name: 'Uruguay', logo: '🇺🇾' },
     away: { name: 'Spain', logo: '🇪🇸' },
@@ -79,10 +85,10 @@ const matchCards = [
 ];
 
 const galleryItems = [
-  { label: 'Pool Zone', text: 'Tables, cue lines, and competitive breaks.' },
-  { label: 'BBQ Night', text: 'Grill smoke, fresh plates, and group tables.' },
-  { label: 'Big Screens', text: 'Live football nights with crowd energy.' },
-  { label: 'Rooftop View', text: 'Remera evenings above Kigali.' },
+  { label: 'Pool Zone', text: 'Tables, cue lines, and competitive breaks.', image: poolImage },
+  { label: 'BBQ Night', text: 'Grill smoke, fresh plates, and group tables.', image: bbqImage },
+  { label: 'Big Screens', text: 'Live football nights with crowd energy.', image: heroImage },
+  { label: 'Rooftop View', text: 'Remera evenings above Kigali.', image: viewimg },
 ];
 
 function Home() {
@@ -122,8 +128,8 @@ function Home() {
       <section className="home-highlight-strip world-cup-strip reveal-on-scroll" aria-label="World Cup live match viewing at Triple NNN">
         <div className="container">
           <div className="world-cup-strip__heading">
-            <p className="section-kicker">World Cup live match viewing</p>
-            <h2>Watch Today's Games at Triple NNN</h2>
+            <p className="hidden section-kicker">World Cup live match viewing</p>
+            <h2 className="hidden">Watch Today's Games at Triple NNN</h2>
           </div>
           <div className="home-highlight-strip__grid world-cup-grid">
             {worldCupMatches.map((match) => (
@@ -133,11 +139,11 @@ function Home() {
                   <strong>VS</strong>
                   <span className="team-logo" aria-label={`${match.away.name} logo`}>{match.away.logo}</span>
                 </div>
-                <div>
+                <div className="world-cup-card__content">
                   <h2>{match.home.name} vs {match.away.name}</h2>
-                  <p>{match.group} • {match.time}</p>
-                  <small>{match.venue}</small>
-                  <span className="live-at">Viewing live at Triple NNN</span>
+                  <p>{match.time}</p>
+                  <small className='hidden'>{match.venue}</small>
+                  <span className="live-at">Live at Triple NNN</span>
                 </div>
               </article>
             ))}
@@ -149,15 +155,19 @@ function Home() {
       <section className="home-section gallery-preview reveal-on-scroll" aria-labelledby="gallery-title">
         <div className="container">
           <div className="gallery-preview__heading">
-            <p className="section-kicker">Preview the Vibe</p>
-            <h2 id="gallery-title">Game Center Moments</h2>
+            <p className="section-kicker">The Triple NNN Unity Vibe</p>
+            <h2 id="gallery-title" style={{letterSpacing: '0px'}}>Game Center Moments</h2><br />
           </div>
           <div className="gallery-grid">
             {galleryItems.map((item) => (
-              <article className="gallery-tile reveal-on-scroll" key={item.label}>
+              <article
+                className="gallery-tile reveal-on-scroll"
+                key={item.label}
+                style={{ '--gallery-image': `url(${item.image})` }}
+              >
                 <div>
                   <span>{item.label}</span>
-                  <p>{item.text}</p>
+                  <p className='hidden' style={{color: 'white'}}>{item.text}</p>
                 </div>
               </article>
             ))}
@@ -172,16 +182,22 @@ function Home() {
           <div className="rooftop-card">
             <Building2 aria-hidden="true" size={34} />
             <span>Remera Nights</span>
-            <strong>Kigali View</strong>
+            <strong>Rooftop View</strong>
           </div>
           <div>
             <p className="section-kicker">Above the Game</p>
             <h2 id="rooftop-title">Rooftop Kigali Views</h2>
+            <br />
             <p>
               Unwind above Remera with a relaxed rooftop setting and a view of
-              the city.
+              the city. Settle in with friends as the skyline opens up around
+              you and the pace of the evening slows down. It is an easy spot
+              for sunset drinks, casual catchups, and laid-back match nights.
+              From early evening to late hours, the rooftop adds a calm city
+              backdrop to the full Triple NNN experience.
             </p>
-            <Link className="button button--ghost" to="/contact">Plan Your Visit</Link>
+            <br />
+            <Link className="button button--primary" to="/contact">Explore Gallery</Link>
           </div>
         </div>
       </section>
@@ -193,7 +209,7 @@ function Home() {
           <div className="section-title">
             <p className="section-title__eyebrow">Play. Eat. Watch. Relax.</p>
             <h2 id="experience-title">Built for Every Kind of Night Out</h2>
-            <p className="section-title__text">
+            <p className="section-title__text hidden">
               Triple NNN brings pool lounge energy, food, football, and rooftop
               hangouts into one Remera destination.
             </p>

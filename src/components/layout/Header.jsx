@@ -1,5 +1,6 @@
-import { Menu } from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
+import { NavLink, useLocation } from 'react-router-dom';
 import logo from '../../assets/logo/nnn-logo.png';
 
 const navigationLinks = [
@@ -13,6 +14,21 @@ const navigationLinks = [
 ];
 
 function Header() {
+  const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    setIsMobileNavOpen(false);
+  }, [location.pathname]);
+
+  const toggleMobileNav = () => {
+    setIsMobileNavOpen((current) => !current);
+  };
+
+  const closeMobileNav = () => {
+    setIsMobileNavOpen(false);
+  };
+
   return (
     <header className="site-header">
       <div className="container header__inner">
@@ -45,15 +61,22 @@ function Header() {
           <NavLink className="button button--primary" to="/contact">
             Book Now
           </NavLink>
-          <a className="menu-toggle" href="#mobile-navigation" aria-label="Open navigation menu">
-            <Menu aria-hidden="true" size={22} />
-          </a>
+          <button
+            className="menu-toggle"
+            type="button"
+            aria-controls="mobile-navigation"
+            aria-expanded={isMobileNavOpen}
+            aria-label={isMobileNavOpen ? 'Close navigation menu' : 'Open navigation menu'}
+            onClick={toggleMobileNav}
+          >
+            {isMobileNavOpen ? <X aria-hidden="true" size={22} /> : <Menu aria-hidden="true" size={22} />}
+          </button>
         </div>
       </div>
 
       <nav
         id="mobile-navigation"
-        className="mobile-nav"
+        className={isMobileNavOpen ? 'mobile-nav mobile-nav--open' : 'mobile-nav'}
         aria-label="Mobile navigation"
       >
         <div className="container mobile-nav__inner">
@@ -61,6 +84,7 @@ function Header() {
             <NavLink
               key={link.to}
               to={link.to}
+              onClick={closeMobileNav}
               className={({ isActive }) =>
                 isActive ? 'mobile-nav__link mobile-nav__link--active' : 'mobile-nav__link'
               }
@@ -68,7 +92,7 @@ function Header() {
               {link.label}
             </NavLink>
           ))}
-          <NavLink className="button button--primary" to="/contact">
+          <NavLink className="button button--primary" to="/contact" onClick={closeMobileNav}>
             Book Now
           </NavLink>
         </div>

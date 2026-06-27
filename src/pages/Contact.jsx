@@ -66,7 +66,7 @@ function Contact() {
       <section className="map-placeholder-section">
         <div className="container">
           <div className="map-placeholder">
-            <span>Map placeholder</span>
+            <span style={{display: 'none'}}>Map placeholder</span>
             <strong>Remera, Kigali</strong>
           </div>
         </div>

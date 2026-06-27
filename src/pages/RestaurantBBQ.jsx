@@ -6,7 +6,7 @@ const restaurantPageFeatures = [
   'Authentic Ugandan dishes',
   'Restaurant meals',
   'Refreshing drinks',
-  'Rooftop dining CTA',
+
 ];
 
 function RestaurantBBQ() {
@@ -16,7 +16,7 @@ function RestaurantBBQ() {
         <div className="container page-hero__inner">
           <div className="page-hero__content">
             <p className="page-hero__eyebrow">Triple NNN Unity Game Center Remera</p>
-            <h1>Great Food. Good Games. Good Company.</h1>
+            <h1>Great Food. Good Company.</h1>
             <p className="page-hero__text">
               BBQ nights, authentic Ugandan dishes, restaurant meals,
               refreshing drinks, and group tables for the full Triple NNN experience.

@@ -1,23 +1,24 @@
 
 /* Theme variables and font imports */
-@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Outfit:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue:wght@500;600;700&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Changa:wght@100;200;300;400;500;600;700;800&display=swap');
 
 :root {
   --color-black: #020101;
   --color-dark: #28282e;
-  --color-red: #d7204d;
-  --color-red-dark: #942b46;
+  --color-red: #f0af0d;
+  --color-red-dark: #d89d0b;
   --color-grey: #bbbaba;
   --color-light-grey: #d1d0d0;
   --color-white: #ffffff;
 
-  --font-heading: 'Rajdhani', 'Arial Narrow', Impact, sans-serif;
-  --font-body: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-heading: 'Changa', sans-serif;
+  --font-body: 'Outfit', sans-serif;
 
   --site-max-width: 1180px;
   --section-spacing: clamp(4rem, 8vw, 7rem);
   --radius-small: 6px;
-  --shadow-red: 0 18px 50px rgba(215, 32, 77, 0.18);
+  --shadow-red: 0 18px 50px rgba(240, 175, 13, 0.18);
   --border-muted: 1px solid rgba(255, 255, 255, 0.12);
 }
 
@@ -85,20 +86,22 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 500;
   line-height: 0.98;
-  text-transform: uppercase;
+  
 }
 
 h1 {
-  max-width: 13ch;
+  /*max-width: 13ch;*/
   margin-bottom: 1.25rem;
-  font-size: clamp(3rem, 8vw, 7rem);
+  font-size: 4rem!important;
+  letter-spacing: -5px;
 }
 
 h2 {
   margin-bottom: 1rem;
   font-size: clamp(2.2rem, 5vw, 4.5rem);
+  letter-spacing: -5px;
 }
 
 h3 {
@@ -190,7 +193,7 @@ p {
   width: 80px;
   height: 80px;
   object-fit: contain;
-  filter: drop-shadow(0 0 16px rgba(215, 32, 77, 0.22));
+  filter: drop-shadow(0 0 16px rgba(240, 175, 13, 0.22));
 }
 
 .primary-nav {
@@ -236,7 +239,7 @@ p {
 .page-hero {
   background:
     linear-gradient(180deg, rgba(2, 1, 1, 0.5), rgba(2, 1, 1, 0.94)),
-    radial-gradient(circle at 50% 38%, rgba(215, 32, 77, 0.28), transparent 25rem),
+    radial-gradient(circle at 50% 38%, rgba(240, 175, 13, 0.28), transparent 25rem),
     url('../assets/images/hero/bg.png') center / cover no-repeat,
     var(--color-black);
 }
@@ -263,9 +266,9 @@ p {
   width: min(82vw, 980px);
   height: clamp(7rem, 13vw, 11rem);
   content: '';
-  background: linear-gradient(90deg, rgba(148, 43, 70, 0.18), var(--color-red), rgba(148, 43, 70, 0.18));
+  background: linear-gradient(90deg, rgba(216, 157, 11, 0.18), var(--color-red), rgba(216, 157, 11, 0.18));
   clip-path: polygon(0 0, 8% 0, 50% 68%, 92% 0, 100% 0, 50% 100%);
-  filter: drop-shadow(0 18px 38px rgba(215, 32, 77, 0.24));
+  filter: drop-shadow(0 18px 38px rgba(240, 175, 13, 0.24));
   opacity: 0.88;
   pointer-events: none;
   transform: translateX(-50%);
@@ -295,7 +298,7 @@ p {
 
 .world-cup-strip {
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.08), transparent 36%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.08), transparent 36%),
     #ffffff;
 }
 
@@ -319,58 +322,76 @@ p {
 }
 
 .world-cup-card {
-  min-height: 190px;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  text-align: center;
+  min-height: 140px;
 }
 
 .world-cup-card__teams {
   display: flex;
   align-items: center;
-  gap: 0.55rem;
-  margin-bottom: 0.7rem;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-bottom: 0.55rem;
 }
 
 .team-logo {
   display: grid;
-  width: 38px;
-  height: 38px;
+  width: 32px;
+  height: 32px;
   place-items: center;
   border: 1px solid rgba(2, 1, 1, 0.08);
   border-radius: 50%;
   background: #f7f7f8;
-  font-size: 1.25rem;
-  box-shadow: 0 8px 20px rgba(2, 1, 1, 0.08);
+  font-size: 1rem;
+  box-shadow: 0 6px 14px rgba(2, 1, 1, 0.07);
 }
 
 .world-cup-card__teams strong {
   color: var(--color-red);
   font-family: var(--font-heading);
-  font-size: 0.78rem;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+}
+
+.world-cup-card__content {
+  display: grid;
+  gap: 0.28rem;
+  justify-items: center;
+}
+
+.world-cup-card h2 {
+  margin-bottom: 0.1rem;
+  font-size: clamp(0.96rem, 1.15vw, 1.1rem);
+  line-height: 0.94;
 }
 
 .world-cup-card small,
 .live-at {
   display: block;
   color: #6d6d75;
-  font-size: 0.78rem;
+  font-size: 0.73rem;
   font-weight: 700;
 }
 
 .live-at {
-  margin-top: 0.55rem;
+  margin-top: 0.25rem;
   color: var(--color-red);
   text-transform: uppercase;
 }
 
 .page-hero::before {
   background:
-    linear-gradient(105deg, rgba(2, 1, 1, 0.9) 0%, rgba(2, 1, 1, 0.66) 50%, rgba(215, 32, 77, 0.5) 100%),
+    linear-gradient(105deg, rgba(2, 1, 1, 0.9) 0%, rgba(2, 1, 1, 0.66) 50%, rgba(240, 175, 13, 0.5) 100%),
     repeating-linear-gradient(135deg, transparent 0 30px, rgba(255, 255, 255, 0.035) 30px 31px);
 }
 
 .rooftop-card {
   background:
     linear-gradient(180deg, rgba(2, 1, 1, 0.05), rgba(2, 1, 1, 0.78)),
-    linear-gradient(135deg, rgba(215, 32, 77, 0.18), rgba(2, 1, 1, 0.56)),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.18), rgba(2, 1, 1, 0.56)),
     url('../assets/night-views.webp') center / cover no-repeat;
 }
 
@@ -378,8 +399,8 @@ p {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(circle at 50% -20%, rgba(215, 32, 77, 0.22), transparent 18rem),
-    linear-gradient(135deg, rgba(215, 32, 77, 0.09), transparent 36%),
+    radial-gradient(circle at 50% -20%, rgba(240, 175, 13, 0.22), transparent 18rem),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.09), transparent 36%),
     #070607;
 }
 
@@ -396,7 +417,7 @@ p {
   left: 8%;
   width: 5.4rem;
   aspect-ratio: 1;
-  border: 0.55rem solid rgba(215, 32, 77, 0.16);
+  border: 0.55rem solid rgba(240, 175, 13, 0.16);
 }
 
 .site-footer::after {
@@ -432,7 +453,7 @@ p {
 .page-hero {
   background:
     linear-gradient(180deg, rgba(2, 1, 1, 0.56), rgba(2, 1, 1, 0.94)),
-    radial-gradient(circle at 50% 40%, rgba(215, 32, 77, 0.22), transparent 25rem),
+    radial-gradient(circle at 50% 40%, rgba(240, 175, 13, 0.22), transparent 25rem),
     url('../assets/images/hero/bg.png') center / cover no-repeat,
     var(--color-black) !important;
 }
@@ -473,6 +494,7 @@ h2 {
 .contact-card h3 {
   font-size: clamp(1rem, 1.7vw, 1.32rem);
   line-height: 1.04;
+  letter-spacing: 0px;
 }
 
 .world-cup-strip__heading {
@@ -483,42 +505,43 @@ h2 {
 }
 
 .world-cup-grid {
-  grid-template-columns: repeat(5, minmax(150px, 1fr));
+  grid-template-columns: repeat(5, minmax(140px, 1fr));
 }
 
 .world-cup-card {
-  display: block;
+  display: grid;
   min-height: 0;
-  padding: 1rem;
+  padding: 0.9rem 0.8rem;
+  gap: 0.2rem;
 }
 
 .world-cup-card__teams {
   justify-content: center;
-  margin-bottom: 0.75rem;
+  margin-bottom: 0.25rem;
 }
 
 .team-logo {
-  width: 34px;
-  height: 34px;
-  font-size: 1.08rem;
+  width: 30px;
+  height: 30px;
+  font-size: 0.95rem;
 }
 
 .world-cup-card h2 {
-  margin-bottom: 0.45rem;
+  margin-bottom: 0.1rem;
   text-align: center;
-  font-size: clamp(1rem, 1.45vw, 1.22rem);
+  font-size: clamp(0.92rem, 1.15vw, 1.06rem);
 }
 
 .world-cup-card p,
 .world-cup-card small,
 .live-at {
   text-align: center;
-  font-size: 0.78rem;
-  line-height: 1.35;
+  font-size: 0.72rem;
+  line-height: 1.25;
 }
 
 .live-at {
-  padding-top: 0.45rem;
+  padding-top: 0.15rem;
 }
 
 .form-success {
@@ -549,6 +572,7 @@ h2 {
   border-radius: var(--radius-small);
   background: rgba(255, 255, 255, 0.04);
   color: var(--color-white);
+  padding: 0;
 }
 
 .mobile-nav {
@@ -570,7 +594,7 @@ h2 {
 .site-footer {
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   background:
-    radial-gradient(circle at top, rgba(215, 32, 77, 0.12), transparent 18rem),
+    radial-gradient(circle at top, rgba(240, 175, 13, 0.12), transparent 18rem),
     #070607;
   color: var(--color-white);
 }
@@ -665,9 +689,10 @@ h2 {
   align-items: center;
   justify-content: center;
   min-height: 44px;
-  padding: 0.8rem 1.1rem;
+  padding: 0.8rem 1.6rem;
   border: 1px solid transparent;
-  border-radius: var(--radius-small);
+  border-radius: 0;
+  clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
   font-size: 0.88rem;
   font-weight: 900;
   letter-spacing: 0;
@@ -696,7 +721,7 @@ h2 {
 .button--primary:hover {
   border-color: var(--color-red-dark);
   background: var(--color-red-dark);
-  box-shadow: 0 18px 55px rgba(215, 32, 77, 0.42);
+  box-shadow: 0 18px 55px rgba(240, 175, 13, 0.42);
 }
 
 .button--secondary,
@@ -718,9 +743,9 @@ h2 {
   overflow: hidden;
   min-height: calc(100vh - 86px);
   padding-block: clamp(4rem, 7vw, 6.5rem) clamp(2.75rem, 5vw, 4.25rem);
-  border-bottom: 1px solid rgba(215, 32, 77, 0.35);
+  border-bottom: 1px solid rgba(240, 175, 13, 0.35);
   background:
-    radial-gradient(circle at 50% 36%, rgba(215, 32, 77, 0.22), transparent 24rem),
+    radial-gradient(circle at 50% 36%, rgba(240, 175, 13, 0.22), transparent 24rem),
     linear-gradient(180deg, rgba(2, 1, 1, 0.72), rgba(2, 1, 1, 0.95)),
     repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.045) 0 1px, transparent 1px 115px),
     var(--color-black);
@@ -732,7 +757,7 @@ h2 {
   z-index: -3;
   content: '';
   background:
-    linear-gradient(115deg, rgba(2, 1, 1, 0.94) 0%, rgba(2, 1, 1, 0.68) 48%, rgba(148, 43, 70, 0.5) 100%),
+    linear-gradient(115deg, rgba(2, 1, 1, 0.94) 0%, rgba(2, 1, 1, 0.68) 48%, rgba(216, 157, 11, 0.5) 100%),
     radial-gradient(circle at 18% 18%, rgba(255, 255, 255, 0.08), transparent 12rem);
 }
 
@@ -765,7 +790,7 @@ h2 {
 .home-hero__logo {
   width: clamp(94px, 10vw, 142px);
   margin-bottom: 1.15rem;
-  filter: drop-shadow(0 0 28px rgba(215, 32, 77, 0.36));
+  filter: drop-shadow(0 0 28px rgba(240, 175, 13, 0.36));
 }
 
 .home-hero__intro {
@@ -781,8 +806,8 @@ h2 {
   max-width: 9ch;
   margin-bottom: 1.2rem;
   color: var(--color-red);
-  font-size: clamp(5rem, 14vw, 11rem);
-  letter-spacing: 0;
+  font-size: 5rem!important;
+  letter-spacing: -5;
   text-shadow:
     0 1px 0 rgba(255, 255, 255, 0.18),
     0 22px 52px rgba(0, 0, 0, 0.58);
@@ -860,7 +885,7 @@ h2 {
   border-radius: 50%;
   background:
     radial-gradient(circle, rgba(2, 1, 1, 0.95) 0 26%, transparent 27%),
-    conic-gradient(from 20deg, rgba(215, 32, 77, 0.84), rgba(255, 255, 255, 0.08), rgba(215, 32, 77, 0.72));
+    conic-gradient(from 20deg, rgba(240, 175, 13, 0.84), rgba(255, 255, 255, 0.08), rgba(240, 175, 13, 0.72));
   box-shadow: inset 0 0 35px rgba(0, 0, 0, 0.55);
 }
 
@@ -919,7 +944,7 @@ h2 {
   height: 10px;
   border: 2px solid var(--color-red);
   border-radius: 50%;
-  box-shadow: 0 0 18px rgba(215, 32, 77, 0.58);
+  box-shadow: 0 0 18px rgba(240, 175, 13, 0.58);
 }
 
 .home-hero-decor {
@@ -935,9 +960,9 @@ h2 {
   bottom: 13%;
   width: 66vw;
   height: clamp(5rem, 12vw, 11rem);
-  background: linear-gradient(90deg, rgba(215, 32, 77, 0.12), var(--color-red) 38%, rgba(215, 32, 77, 0.88));
+  background: linear-gradient(90deg, rgba(240, 175, 13, 0.12), var(--color-red) 38%, rgba(240, 175, 13, 0.88));
   box-shadow:
-    0 0 45px rgba(215, 32, 77, 0.42),
+    0 0 45px rgba(240, 175, 13, 0.42),
     inset 0 0 30px rgba(255, 255, 255, 0.16);
 }
 
@@ -979,7 +1004,7 @@ h2 {
 .home-hero-decor__diamond--right {
   top: 18%;
   right: 8%;
-  border-color: rgba(215, 32, 77, 0.4);
+  border-color: rgba(240, 175, 13, 0.4);
 }
 
 .home-hero-decor__cue {
@@ -1056,7 +1081,7 @@ h2 {
   background:
     linear-gradient(180deg, rgba(2, 1, 1, 0.42), rgba(2, 1, 1, 0.96)),
     radial-gradient(circle at 50% 18%, rgba(255, 255, 255, 0.12), transparent 18rem),
-    radial-gradient(circle at 50% 62%, rgba(215, 32, 77, 0.34), transparent 28rem),
+    radial-gradient(circle at 50% 62%, rgba(240, 175, 13, 0.34), transparent 28rem),
     url('../assets/images/hero/dark-pool-table-bg.svg'),
     linear-gradient(115deg, rgba(3, 24, 17, 0.9), rgba(2, 1, 1, 0.95) 44%, rgba(47, 4, 16, 0.95)),
     var(--color-black);
@@ -1159,7 +1184,7 @@ h2 {
 
 .home-hero-decor__beam {
   bottom: 20%;
-  width: 74vw;
+  width: 50vw;
   height: clamp(5.5rem, 11vw, 10rem);
   opacity: 0.92;
 }
@@ -1199,9 +1224,9 @@ h2 {
   height: clamp(4.6rem, 9vw, 8.5rem);
   border: 1px solid rgba(255, 255, 255, 0.12);
   background:
-    linear-gradient(135deg, rgba(0, 170, 96, 0.18), rgba(215, 32, 77, 0.2)),
+    linear-gradient(135deg, rgba(0, 170, 96, 0.18), rgba(240, 175, 13, 0.2)),
     rgba(2, 1, 1, 0.58);
-  box-shadow: 0 0 34px rgba(215, 32, 77, 0.16);
+  box-shadow: 0 0 34px rgba(240, 175, 13, 0.16);
 }
 
 .home-hero-decor__screen--left {
@@ -1264,7 +1289,7 @@ h2 {
   inset: 0;
   content: '';
   background:
-    linear-gradient(115deg, rgba(2, 1, 1, 0.94) 0%, rgba(2, 1, 1, 0.72) 50%, rgba(148, 43, 70, 0.38) 100%),
+    linear-gradient(115deg, rgba(2, 1, 1, 0.94) 0%, rgba(2, 1, 1, 0.72) 50%, rgba(216, 157, 11, 0.38) 100%),
     repeating-linear-gradient(135deg, transparent 0 28px, rgba(255, 255, 255, 0.035) 28px 29px);
 }
 
@@ -1275,7 +1300,7 @@ h2 {
   width: min(48vw, 560px);
   aspect-ratio: 1;
   content: '';
-  border: 2px solid rgba(215, 32, 77, 0.48);
+  border: 2px solid rgba(240, 175, 13, 0.48);
   transform: rotate(18deg);
 }
 
@@ -1319,7 +1344,7 @@ h2 {
   margin-bottom: 2rem;
   color: var(--color-white);
   font-size: clamp(1.1rem, 2.2vw, 1.55rem);
-  font-weight: 700;
+  font-weight: 200;
 }
 
 .page-hero__actions {
@@ -1395,7 +1420,7 @@ h2 {
 /* Final polish: lighter pages, tighter type, cleaner hero hierarchy */
 .button {
   min-height: 42px;
-  padding: 0.74rem 1rem;
+  padding: 0.74rem 1.45rem;
   font-size: 0.8rem;
 }
 
@@ -1434,7 +1459,7 @@ h2 {
 .home-hero-decor__beam {
   bottom: 21%;
   height: clamp(4.2rem, 8vw, 7rem);
-  background: linear-gradient(90deg, rgba(215, 32, 77, 0.06), var(--color-red) 42%, rgba(215, 32, 77, 0.86));
+  background: linear-gradient(90deg, rgba(240, 175, 13, 0.06), var(--color-red) 42%, rgba(240, 175, 13, 0.86));
 }
 
 .home-hero-decor__v {
@@ -1465,7 +1490,7 @@ h2 {
 
 .page-hero::before {
   background:
-    linear-gradient(105deg, rgba(2, 1, 1, 0.92) 0%, rgba(2, 1, 1, 0.78) 48%, rgba(215, 32, 77, 0.48) 100%),
+    linear-gradient(105deg, rgba(2, 1, 1, 0.92) 0%, rgba(2, 1, 1, 0.78) 48%, rgba(240, 175, 13, 0.48) 100%),
     repeating-linear-gradient(135deg, transparent 0 30px, rgba(255, 255, 255, 0.035) 30px 31px);
 }
 
@@ -1473,8 +1498,8 @@ h2 {
   right: -8vw;
   bottom: -18vw;
   width: min(38vw, 430px);
-  border-color: rgba(215, 32, 77, 0.58);
-  background: rgba(215, 32, 77, 0.08);
+  border-color: rgba(240, 175, 13, 0.58);
+  background: rgba(240, 175, 13, 0.08);
 }
 
 .page-hero__inner {
@@ -1509,7 +1534,8 @@ h2 {
 
 .section-title h2,
 .cta-section h2 {
-  font-size: clamp(2.1rem, 4.6vw, 4.2rem);
+  font-size: 60px;
+  letter-spacing: -2;
 }
 
 .section-title__text {
@@ -1542,7 +1568,7 @@ h2 {
   z-index: 2;
   padding-block: clamp(1.25rem, 3vw, 2.25rem);
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.08), transparent 34%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.08), transparent 34%),
     var(--color-white);
   color: var(--color-black);
 }
@@ -1579,9 +1605,10 @@ h2 {
 
 .home-highlight-card {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr);
-  gap: 0.85rem;
+  grid-template-columns: 1fr;
+  gap: 0.6rem;
   align-items: start;
+  justify-items: center;
   min-height: 150px;
   padding: 1.1rem;
   border: 2px solid rgba(2, 1, 1, 0.1);
@@ -1596,7 +1623,7 @@ h2 {
 
 .home-highlight-card:hover {
   border-color: var(--color-red);
-  box-shadow: 0 20px 48px rgba(215, 32, 77, 0.18);
+  box-shadow: 0 20px 48px rgba(240, 175, 13, 0.18);
   transform: translateY(-5px);
 }
 
@@ -1608,6 +1635,7 @@ h2 {
   margin-bottom: 0.45rem;
   color: var(--color-black);
   font-size: clamp(1.25rem, 2.6vw, 1.75rem);
+  text-align: center;
 }
 
 .home-highlight-card p {
@@ -1615,6 +1643,7 @@ h2 {
   color: var(--color-dark);
   font-size: 0.9rem;
   line-height: 1.45;
+  text-align: center;
 }
 
 .contact-grid {
@@ -1663,7 +1692,7 @@ h2 {
   width: min(88vw, 1180px);
   height: 1px;
   content: '';
-  background: linear-gradient(90deg, transparent, rgba(215, 32, 77, 0.7), transparent);
+  background: linear-gradient(90deg, transparent, rgba(240, 175, 13, 0.7), transparent);
   transform: translateX(-50%);
 }
 
@@ -1724,7 +1753,7 @@ h2 {
 .booking-strip p {
   max-width: 680px;
   color: var(--color-white);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .booking-strip__actions,
@@ -1737,7 +1766,7 @@ h2 {
 
 .experience-section {
   background:
-    radial-gradient(circle at 82% 16%, rgba(215, 32, 77, 0.17), transparent 18rem),
+    radial-gradient(circle at 82% 16%, rgba(240, 175, 13, 0.17), transparent 18rem),
     var(--color-black);
 }
 
@@ -1771,7 +1800,7 @@ h2 {
 .match-card:hover,
 .detail-card:hover,
 .mini-card:hover {
-  border-color: rgba(215, 32, 77, 0.85);
+  border-color: rgba(240, 175, 13, 0.85);
   transform: translateY(-5px);
 }
 
@@ -1813,16 +1842,18 @@ h2 {
 }
 
 .competition-banner h2 {
-  max-width: 760px;
+  /*max-width: 760px;*/
   margin-bottom: 0.7rem;
   color: var(--color-white);
+  font-size: 3.7rem!important;
+  letter-spacing: -3px;
 }
 
 .competition-banner p {
   max-width: 670px;
   margin-bottom: 0;
   color: var(--color-white);
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .competition-banner__icon {
@@ -1850,8 +1881,8 @@ h2 {
 .match-card {
   position: relative;
   overflow: hidden;
-  min-height: 230px;
-  padding: 1.25rem;
+  min-height: 128px;
+  padding: 0.9rem 0.85rem;
   transition:
     border-color 180ms ease,
     transform 180ms ease;
@@ -1863,7 +1894,7 @@ h2 {
   width: 9rem;
   aspect-ratio: 1;
   content: '';
-  border: 1.3rem solid rgba(215, 32, 77, 0.05);
+  border: 1.3rem solid rgba(240, 175, 13, 0.05);
   border-radius: 50%;
 }
 
@@ -1872,12 +1903,12 @@ h2 {
   align-items: flex-start;
   justify-content: space-between;
   gap: 1rem;
-  margin-bottom: 1.8rem;
+  margin-bottom: 0.65rem;
 }
 
 .match-card__top span {
   color: var(--color-grey);
-  font-size: 0.74rem;
+  font-size: 0.68rem;
   font-weight: 900;
   text-transform: uppercase;
 }
@@ -1885,17 +1916,17 @@ h2 {
 .match-card__top strong {
   color: var(--color-red);
   font-family: var(--font-heading);
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 0.8;
 }
 
 .match-card h3 {
-  font-size: 1.8rem;
+  font-size: 1.1rem;
 }
 
 .match-card__bar {
-  height: 6px;
-  margin-top: 1.5rem;
+  height: 5px;
+  margin-top: 0.8rem;
   overflow: hidden;
   background: rgba(255, 255, 255, 0.1);
 }
@@ -1921,7 +1952,7 @@ h2 {
 
 .food-section {
   background:
-    radial-gradient(circle at 18% 20%, rgba(215, 32, 77, 0.2), transparent 18rem),
+    radial-gradient(circle at 18% 20%, rgba(240, 175, 13, 0.2), transparent 18rem),
     var(--color-black);
 }
 
@@ -1951,7 +1982,7 @@ h2 {
 
 .rooftop-section {
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.16), transparent 34%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.16), transparent 34%),
     #111014;
 }
 
@@ -1971,7 +2002,7 @@ h2 {
   border-radius: var(--radius-small);
   background:
     linear-gradient(180deg, transparent, rgba(2, 1, 1, 0.86)),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(215, 32, 77, 0.2));
+    linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(240, 175, 13, 0.2));
 }
 
 .rooftop-card svg {
@@ -2018,19 +2049,20 @@ h2 {
   min-height: 280px;
   align-items: end;
   padding: 1rem;
-  border-radius: var(--radius-small);
+  border-radius: 0;
+  clip-path: polygon(12% 0, 100% 0, 88% 100%, 0 100%);
   background:
-    linear-gradient(180deg, transparent 10%, rgba(2, 1, 1, 0.88)),
-    repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.09) 0 1px, transparent 1px 20px),
-    linear-gradient(135deg, #111014, var(--color-red-dark));
+    linear-gradient(180deg, rgba(2, 1, 1, 0.12) 10%, rgba(2, 1, 1, 0.9)),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.14), rgba(2, 1, 1, 0.2)),
+    var(--gallery-image) center / cover no-repeat;
   color: var(--color-white);
 }
 
 .gallery-tile:nth-child(even) {
   background:
-    linear-gradient(180deg, transparent 10%, rgba(2, 1, 1, 0.88)),
-    radial-gradient(circle at 30% 22%, rgba(255, 255, 255, 0.16), transparent 8rem),
-    linear-gradient(135deg, #07140f, #141318);
+    linear-gradient(180deg, rgba(2, 1, 1, 0.12) 10%, rgba(2, 1, 1, 0.9)),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.14), rgba(2, 1, 1, 0.2)),
+    var(--gallery-image) center / cover no-repeat;
 }
 
 .gallery-tile span {
@@ -2155,7 +2187,7 @@ h2 {
   margin-bottom: 0;
   padding: 0.9rem;
   border-left: 4px solid var(--color-red);
-  background: rgba(215, 32, 77, 0.12);
+  background: rgba(240, 175, 13, 0.12);
   color: var(--color-white);
   font-weight: 700;
 }
@@ -2186,7 +2218,7 @@ h2 {
   border: var(--border-muted);
   border-radius: var(--radius-small);
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.22), transparent 36%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.22), transparent 36%),
     repeating-linear-gradient(45deg, rgba(255, 255, 255, 0.04) 0 1px, transparent 1px 22px),
     #111014;
   text-align: center;
@@ -2209,7 +2241,7 @@ h2 {
 .home-highlight-strip {
   padding-block: clamp(1rem, 2.5vw, 1.75rem);
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.06), transparent 34%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.06), transparent 34%),
     #fbfbfc;
 }
 
@@ -2262,7 +2294,7 @@ h2 {
 .booking-strip {
   padding-block: clamp(3rem, 6vw, 4.6rem);
   background:
-    linear-gradient(112deg, #ffffff 0 58%, rgba(215, 32, 77, 0.1) 58%),
+    linear-gradient(112deg, #ffffff 0 58%, rgba(240, 175, 13, 0.1) 58%),
     #ffffff;
   color: var(--color-black);
 }
@@ -2270,7 +2302,7 @@ h2 {
 .booking-strip h2 {
   max-width: 720px;
   color: var(--color-black);
-  font-size: clamp(2.6rem, 6vw, 5rem);
+  font-size: 65px;
 }
 
 .booking-strip p {
@@ -2285,8 +2317,12 @@ h2 {
 
 .experience-section {
   background:
-    radial-gradient(circle at 82% 16%, rgba(215, 32, 77, 0.08), transparent 18rem),
+    radial-gradient(circle at 82% 16%, rgba(240, 175, 13, 0.08), transparent 18rem),
     #f4f4f6;
+}
+
+.experience-title{
+  font-weight: 200!important;
 }
 
 .experience-card,
@@ -2343,7 +2379,7 @@ h2 {
 }
 
 .match-card {
-  min-height: 205px;
+  min-height: 128px;
 }
 
 .match-card__top span,
@@ -2352,7 +2388,8 @@ h2 {
 }
 
 .match-card h3 {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
+  margin-bottom: 0.35rem;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
 }
 
 .food-section {
@@ -2376,7 +2413,7 @@ h2 {
 
 .rooftop-section {
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.08), transparent 32%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.08), transparent 32%),
     #f1f1f4;
 }
 
@@ -2384,12 +2421,14 @@ h2 {
   min-height: 300px;
   border-color: rgba(2, 1, 1, 0.08);
   background:
-    linear-gradient(180deg, transparent, rgba(2, 1, 1, 0.72)),
-    linear-gradient(135deg, rgba(215, 32, 77, 0.22), rgba(2, 1, 1, 0.8));
+    linear-gradient(180deg, transparent, rgba(2, 1, 1, 0.22)),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.22), rgba(2, 1, 1, 0.2)),
+    url('../assets/night-views.webp') center / cover no-repeat;
 }
 
 .rooftop-card strong {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-size: 3rem!important;
+  font-weight: 600;
 }
 
 .gallery-preview {
@@ -2399,6 +2438,11 @@ h2 {
 .gallery-tile {
   min-height: 235px;
   overflow: hidden;
+  background:
+    linear-gradient(180deg, rgba(2, 1, 1, 0.12) 10%, rgba(2, 1, 1, 0.9)),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.14), rgba(2, 1, 1, 0.2)),
+    var(--gallery-image) center / cover no-repeat;
+  box-shadow: 0 16px 36px rgba(2, 1, 1, 0.12);
   transition:
     box-shadow 180ms ease,
     transform 180ms ease;
@@ -2463,7 +2507,7 @@ h2 {
 }
 
 .form-success {
-  background: rgba(215, 32, 77, 0.08);
+  background: rgba(240, 175, 13, 0.08);
   color: var(--color-black);
 }
 
@@ -2481,7 +2525,7 @@ h2 {
   min-height: 260px;
   border-color: rgba(2, 1, 1, 0.08);
   background:
-    linear-gradient(135deg, rgba(215, 32, 77, 0.14), transparent 36%),
+    linear-gradient(135deg, rgba(240, 175, 13, 0.14), transparent 36%),
     repeating-linear-gradient(45deg, rgba(2, 1, 1, 0.045) 0 1px, transparent 1px 22px),
     #ffffff;
 }
