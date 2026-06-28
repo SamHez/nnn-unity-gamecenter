@@ -7,7 +7,7 @@ const navigationLinks = [
   { label: 'Home', to: '/' },
   
   { label: 'Pool Tables', to: '/pool-tables' },
-  { label: 'Restaurant & BBQ', to: '/restaurant-bbq' },
+  { label: 'Nyama Choma', to: '/restaurant-bbq' },
   { label: 'Live Matches', to: '/live-matches' },
   { label: 'About', to: '/about' },
   { label: 'Contact', to: '/contact' },

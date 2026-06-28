@@ -5,6 +5,8 @@ import nightViewsImage from '../assets/night-views.webp';
 import poolImage from '../assets/pool-1.webp';
 import bbqImage from '../assets/bbq.jpeg';
 import viewimg from '../assets/views.jpg';
+import icyansiImg from '../assets/icyansi.jpeg';
+
 
 import heroImage from '../assets/images/hero/bg.png';
 
@@ -86,8 +88,8 @@ const matchCards = [
 
 const galleryItems = [
   { label: 'Pool Zone', text: 'Tables, cue lines, and competitive breaks.', image: poolImage },
-  { label: 'BBQ Night', text: 'Grill smoke, fresh plates, and group tables.', image: bbqImage },
-  { label: 'Big Screens', text: 'Live football nights with crowd energy.', image: heroImage },
+  { label: 'Nyama Choma', text: 'Grill smoke, fresh plates, and group tables.', image: bbqImage },
+  { label: 'Icyansi', text: 'Live football nights with crowd energy.', image: icyansiImg },
   { label: 'Rooftop View', text: 'Remera evenings above Kigali.', image: viewimg },
 ];
 
